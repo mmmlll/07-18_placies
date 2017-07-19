@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const PlaceModel = require('../models/Places.js')
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')    // i DO NOT need this here
 const placiesController = require('../controllers/placies_controller')
 
 
@@ -15,6 +15,6 @@ router.get('/', function(req,res){
   })
 })
 
-router.post('/', placiesController.add)
+router.post('/', placiesController.add)    // this wasn't routing because we put a "preventDefault" on the form submit, in script.js. Preventing default means that the form wasn't submitted, so there was no "post" request!
 
 module.exports = router

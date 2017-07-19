@@ -2,6 +2,8 @@ const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
+const bodyParser = require('body-parser')
+// const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
 
 mongoose.Promise = global.Promise
 const url = 'mongodb://localhost:27017/placies'   // this does NOT create a db in Robomongo
@@ -21,6 +23,7 @@ app.engine('.handlebars', exphbs({
   defaultLayout: 'main'
 }))
 app.set('view engine', '.handlebars')
+app.use(bodyParser.urlencoded({ extended: true}))
 
 // set up the routes
 app.use(express.static('public'))

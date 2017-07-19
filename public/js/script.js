@@ -6,7 +6,7 @@ $(function () {
   const apiKey = '&key=AIzaSyDAgz4khVLZpzTGuOxijphSzfJTtHQZrhs'
 
   $placeSearch.on('submit', function(e){
-    e.preventDefault()
+    // e.preventDefault()
     // console.log(this)
     var keywordObj = $(this).serializeArray() // "this" is the form element (as an object), which triggered the function(e). can also use just ".serialize()", which returns a string rather than an object
     // you MUST assign the "name" attribute to your input, otherwise serializeArray cannot work! It needs to assign the name you chose to the key in the form object
